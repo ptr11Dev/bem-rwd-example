@@ -34,15 +34,10 @@ setTimeout(() => {
 }, 2000); */
 
 //buttons
-const btns = document.querySelectorAll(".button");
+const btn = document.querySelector(".button--header");
 
-btns.forEach(btn =>
-  btn.addEventListener("click", () => {
-    btn.classList.toggle("button--active");
-  })
-);
-
-btns[0].addEventListener("click", () => {
+btn.addEventListener("click", () => {
+  btn.classList.toggle("button--active");
   console.log(`As for now - I'm doing nothing.`);
 });
 
@@ -57,20 +52,32 @@ options.forEach(opt =>
   })
 );
 
-//articles;
+//articles
 
 const section = document.querySelector("section");
 
-const append = data => {
+const appendArticles = data => {
   data.forEach(element => {
     let article = document.createElement("article");
+    article.classList.add("article");
     article.setAttribute = element.id;
-    article.innerHTML = `<h1>${element.name}</h1><blockquote>${element.author}</blockquote><p>${element.content}</p>`;
+    article.innerHTML = `<h1 class='article__title'>${element.name}</h1><blockquote class='article__author'>${element.author}</blockquote><p class='article__text'>${element.content}</p>`;
     section.appendChild(article);
   });
 };
 
+//form search
+const search = document.querySelector(".form__input");
+
 fetch("articles.json")
   .then(res => res.json())
-  .then(res => append(res))
+  .then(res => {
+    appendArticles(res);
+    search.addEventListener("input", () => {
+      section.innerHTML = "";
+      let artList = res.filter(data => data.name.includes(search.value));
+      console.log(artList);
+      appendArticles(artList);
+    });
+  })
   .catch(err => console.log(err));
