@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace, sans-serif;
+    /* overflow: hidden; */
+    font-size: 18px;
+}
+
+.header {
+    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('img/refuge-4457275_640.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30vh;
+    color: #ccc;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.header__title {
+    padding: 50px 0 10px 35px;
+    width: 100%;
+    font-size: 1.6em;
+    /* animation: slide 2s linear; */
+}
+
+.header__subtitle-text,
+.header__subtitle-cursor {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 10px 0 10px 0;
+}
+
+.header__subtitle-text {
+    padding-left: 5%;
+    font-size: 1.3rem;
+}
+
+.button {
+    width: 100px;
+    height: 35px;
+    font-size: 1.3rem;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+.button--active {
+    background-color: #222;
+}
+
+.button--header {
+    position: absolute;
+    bottom: 3vh;
+    right: 10vw;
+}
+
+.navigation,
+.navigation__list,
+.footer__list {
+    display: flex;
+}
+
+.navigation {
+    height: 65px;
+    min-width: 100%;
+    margin: 20px 0;
+}
+
+.navigation__logo-icon {
+    margin: 5px auto 0 auto;
+    height: 40px;
+    width: 40px;
+}
+
+.navigation__logo-text {
+    font-size: .7rem;
+    margin-left: 10px;
+}
+
+.navigation__list {
+    margin-left: auto;
+    align-items: center;
+    list-style-type: none;
+}
+
+.navigation__list-item {
+    display: block;
+    text-decoration: none;
+    padding: 0 3px 0 3px;
+    margin-right: 3px;
+    border-right: 1px solid black;
+    color: black;
+    transition: .1s;
+    line-height: 30px;
+}
+
+.navigation__list-item--active {
+    line-height: 65px;
+    border-right: 2px solid green;
+    margin-right: 3px;
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 500px;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+
+.footer {
+    margin-top: 30px;
+    height: 65px;
+    background-color: black;
+}
+
+.footer__list {
+    list-style: none;
+    line-height: 65px;
+    justify-content: space-around;
+}
+
+.footer__list-item {
+    color: white;
+    text-decoration: none;
+}
