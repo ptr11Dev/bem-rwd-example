@@ -1,5 +1,5 @@
 // text typing
-/* const cursor = document.querySelector(".header__subtitle-cursor");
+const cursor = document.querySelector(".header__subtitle-cursor");
 
 const typingSpeed = 200;
 cursorOn = 1;
@@ -31,7 +31,7 @@ typing = () => {
 
 setTimeout(() => {
   typing();
-}, 2000); */
+}, 2000);
 
 //buttons
 const btn = document.querySelector(".button--header");
@@ -76,7 +76,6 @@ fetch("articles.json")
     search.addEventListener("input", () => {
       section.innerHTML = "";
       let artList = res.filter(data => data.name.includes(search.value));
-      console.log(artList);
       appendArticles(artList);
     });
   })
